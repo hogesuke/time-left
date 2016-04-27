@@ -1,0 +1,24 @@
+{
+  "name": "time-left",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hogesuke/time-left.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hogesuke/time-left/issues"
+  },
+  "homepage": "https://github.com/hogesuke/time-left#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-stylus": "^2.3.1",
+    "gulp-typescript": "^2.13.0"
+  }
+}
