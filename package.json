@@ -18,6 +18,7 @@
   "homepage": "https://github.com/hogesuke/time-left#readme",
   "devDependencies": {
     "gulp": "^3.9.1",
+    "gulp-plumber": "^1.1.0",
     "gulp-stylus": "^2.3.1",
     "gulp-typescript": "^2.13.0"
   }
