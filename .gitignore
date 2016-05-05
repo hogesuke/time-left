@@ -52,4 +52,7 @@ fabric.properties
 ### Intellij Patch ###
 *.iml
 
+
+# others
 node_modules
+typings

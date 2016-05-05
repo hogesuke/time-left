@@ -17,9 +17,16 @@
   },
   "homepage": "https://github.com/hogesuke/time-left#readme",
   "devDependencies": {
+    "browserify": "^13.0.0",
     "gulp": "^3.9.1",
     "gulp-plumber": "^1.1.0",
     "gulp-stylus": "^2.3.1",
-    "gulp-typescript": "^2.13.0"
+    "gulp-typescript": "^2.13.0",
+    "minimist": "^1.2.0",
+    "vinyl-source-stream": "^1.1.0"
+  },
+  "dependencies": {
+    "sanitize.css": "^3.3.0",
+    "vue": "^1.0.21"
   }
 }
