@@ -1,12 +1,17 @@
 <!DOCTYPE html>
-<html lang="ja" xmlns:v-on="http://www.w3.org/1999/xhtml" xmlns:v-bind="http://www.w3.org/1999/xhtml">
+<html lang="ja">
 <head>
   <meta charset="UTF-8">
   <title>pickfm</title>
 </head>
 <body>
 <div id="content">
-  <app-form></app-form>
+  <div class="columns">
+    <div class="column is-half is-offset-one-quarter">
+      <app-form></app-form>
+      <app-result ></app-result>
+    </div>
+  </div>
 </div>
 </body>
 <script src="js/bundle.js"></script>
