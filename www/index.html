@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="ja" xmlns:v-on="http://www.w3.org/1999/xhtml" xmlns:v-bind="http://www.w3.org/1999/xhtml">
 <head>
   <meta charset="UTF-8">
   <title>pickfm</title>
@@ -9,7 +9,10 @@
 <div id="content">
 </div>
 <div id="simple">
-    <span v-text="message" v-on="click: magnify" v-attr="style:font"></span>
+  <span v-on:click="magnify" v-bind:style="font">
+    {{message}}
+  </span>
+  <hogehogehoge msg="ccccc">aaa</hogehogehoge>
 </div>
 </body>
 <script src="js/bundle.js"></script>
