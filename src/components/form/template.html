@@ -1,0 +1,70 @@
+<div class="columns" xmlns:v-on="http://www.w3.org/1999/xhtml" xmlns:v-bind="http://www.w3.org/1999/xhtml">
+  <div class="column is-half is-offset-one-quarter">
+    <div class="control is-horizontal">
+      <div class="control-label">
+        <label class="label">性別</label>
+      </div>
+      <div class="control is-grouped">
+        <label class="radio">
+          <input type="radio" name="gender" value="male" v-on:click="handleGenderClick" v-model="gender">
+          男
+        </label>
+        <label class="radio">
+          <input type="radio" name="gender" value="female" v-on:click="handleGenderClick" v-model="gender">
+          女
+        </label>
+      </div>
+    </div>
+    <div class="control is-horizontal">
+      <div class="control-label">
+        <label class="label">寿命</label>
+      </div>
+      <div class="control is-grouped">
+        <input
+          type="text"
+          class="input"
+          v-bind:class="{ 'is-danger': !validation.lifeSpan }"
+          v-model="lifeSpan"
+          number
+        >
+      </div>
+    </div>
+    <div class="control is-horizontal">
+      <div class="control-label">
+        <label class="label">生年月日</label>
+      </div>
+      <div id="birth" class="control is-grouped">
+        <input
+          type="text"
+          class="input year"
+          v-bind:class="{ 'is-danger': !validation.year }"
+          placeholder="年"
+          v-model="year"
+          number
+        >
+        <span class="select">
+          <select
+            class="month"
+            v-bind:class="{ 'is-danger': !validation.month }"
+            v-model="month"
+            number
+          >
+            <option value="0">月</option>
+            <option v-for="i in 12" value="{{ i + 1 }}">{{ i + 1 }}</option>
+          </select>
+        </span>
+        <span class="select">
+          <select
+            class="day"
+            v-bind:class="{ 'is-danger': !validation.day }"
+            v-model="day"
+            number
+          >
+            <option value="0">日</option>
+            <option v-for="i in 31" value="{{ i + 1 }}">{{ i + 1 }}</option>
+          </select>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
