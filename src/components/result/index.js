@@ -17,15 +17,18 @@ export default {
         return 0;
       }
 
-      const passedPercentage = Math.round((Math.log(this.calcAge() / initAge) / Math.log(lifeSpan / initAge)) * 1000000) / 10000;
-      return 100 - passedPercentage;
+      const passedPercentage = (Math.log(this.calcAge() / initAge) / Math.log(lifeSpan / initAge)) * 100;
+
+      if (100 < passedPercentage) {
+        return 0;
+      }
+      return this.padZero(Math.round((100 - passedPercentage) * 1000000000) / 1000000000);
     }
   },
   methods : {
     calcAge: function () {
-      const { year, month, day } = this.sharedState;
+      const { currentDate, year, month, day } = this.sharedState;
       const birthDate = new Date(year, month, day);
-      const currentDate = new Date();
 
       const thisYearBirthday = new Date(currentDate.getFullYear(), month, day);
       const lastYearBirthday = new Date(currentDate.getFullYear() - 1, month, day);
@@ -42,6 +45,9 @@ export default {
       age = isPassedBirthday ? age : age - 1;
 
       return age + surplus / (365 * 24 * 60 * 60 * 1000);
+    },
+    padZero: function (num) {
+      return (num + '000000000000').slice(0, 12);
     }
   }
 };

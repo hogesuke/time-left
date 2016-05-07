@@ -1,4 +1,5 @@
 export default {
+  currentDate: null,
   lifeSpan: 81,
   year    : null,
   month   : 0,
