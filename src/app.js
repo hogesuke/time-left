@@ -8,7 +8,19 @@ setInterval(() => {
   store.currentDate = new Date();
 }, 50);
 
-let app = new Vue({
+setTimeout(() => {
+  let vars = localStorage.getItem('time-left');
+  if (vars) {
+    vars = JSON.parse(vars);
+
+    store.lifeSpan = vars.lifeSpan;
+    store.year     = vars.year;
+    store.month    = vars.month;
+    store.day      = vars.day;
+  }
+}, 200);
+
+new Vue({
   el: '#content',
   components: {
     'app-form'  : Form,

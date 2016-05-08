@@ -17,6 +17,8 @@ export default {
         return null;
       }
 
+      this.save();
+
       const passedPercentage = (Math.log(this.calcAge() / initAge) / Math.log(lifeSpan / initAge)) * 100;
 
       if (100 < passedPercentage) {
@@ -60,6 +62,10 @@ export default {
     },
     padZero: function (num) {
       return (num + '000000000000').slice(0, 12);
+    },
+    save: function () {
+      const { lifeSpan, year, month, day } = this.sharedState;
+      localStorage.setItem('time-left', JSON.stringify({ lifeSpan: lifeSpan, year: year, month: month, day: day }));
     }
   }
 };
