@@ -70,6 +70,12 @@ export default {
     save: function () {
       const { lifeSpan, year, month, day } = this.sharedState;
       localStorage.setItem('time-left', JSON.stringify({ lifeSpan: lifeSpan, year: year, month: month, day: day }));
+    },
+    share: function () {
+      const text = `体感で人生の ${ Math.round(this.passedPercentage * 10) / 10 }% が終了していました`;
+      const twitterUrl  = `https://twitter.com/intent/tweet/?text=${ text }&url=http://life.hogesuke.net/&hashtags=体感余命みえる君`;
+
+      window.open(encodeURI(twitterUrl), 'tweetwindow', 'width=650, height=470, personalbar=0, toolbar=0, scrollbars=1, sizable=1');
     }
   }
 };

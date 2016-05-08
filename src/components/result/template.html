@@ -5,6 +5,9 @@
     <div class="unpassed-block" v-bind:style="{ width: (100 - passedPercentage) + '%' }"></div>
     <div class="center-age">└ 折り返し {{ centerAge }}歳</div>
   </div>
+  <div id="share">
+    <button v-on:click="share">ツイートする</button>
+  </div>
 </div>
 <div id="description">
   <h5>ジャネーの法則</h5>
