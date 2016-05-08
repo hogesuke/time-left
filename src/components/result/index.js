@@ -22,6 +22,9 @@ export default {
       if (100 < passedPercentage) {
         return 100;
       }
+      if (passedPercentage < 0) {
+        return 0;
+      }
       return this.padZero(Math.round(passedPercentage * 1000000000) / 1000000000);
     },
     centerAge: function () {

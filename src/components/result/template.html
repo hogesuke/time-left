@@ -1,4 +1,4 @@
-<div id="result" v-if="!!passedPercentage" transition="result">
+<div id="result" v-if="passedPercentage !== null" transition="result">
   <p class="result-text">体感で人生の <span class="percentage">{{ passedPercentage }}%</span> が終了しています</p>
   <div id="graph">
     <div class="passed-block" v-bind:style="{ width: passedPercentage + '%' }"></div>
