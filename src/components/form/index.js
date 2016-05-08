@@ -17,11 +17,7 @@ export default {
     validation: function () {
       return {
         lifeSpan: /^[0-9]+$/.test(this.sharedState.lifeSpan),
-        year    : () => {
-          const { year, initAge } = this.sharedState;
-          if (!/^[0-9]+$/.test(year)) { return false; }
-          return year <= new Date().getFullYear() - initAge;
-        },
+        year    : /^[0-9]+$/.test(this.sharedState.year),
         month   : /^([1-9]|1[0-2])$/.test(this.sharedState.month),
         day     : /^([1-9]|[1-2][0-9]|3[0-1])$/.test(this.sharedState.day)
       }

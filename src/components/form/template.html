@@ -36,7 +36,7 @@
     <input
       type="text"
       class="input year"
-      v-bind:class="{ 'is-danger': !validation.year() }"
+      v-bind:class="{ 'is-danger': !validation.year }"
       placeholder="年"
       v-model="sharedState.year"
       number
