@@ -1,3 +1,8 @@
-<div id="result">
-  <div>あなたの人生は残り {{ leftPercentage }}% (体感)</div>
+<div id="result" v-if="!!passedPercentage" transition="result">
+  <p class="result-text">体感で人生の <span class="percentage">{{ passedPercentage }}%</span> が終了しています</p>
+  <div id="graph">
+    <div class="passed-block" v-bind:style="{ width: passedPercentage + '%' }"></div>
+    <div class="unpassed-block" v-bind:style="{ width: (100 - passedPercentage) + '%' }"></div>
+    <div class="center-age">└ 折り返し {{ centerAge }}歳</div>
+  </div>
 </div>

@@ -1,3 +1,4 @@
+<h1>体感余命</h1>
 <div class="control is-horizontal">
   <div class="control-label">
     <label class="label">性別</label>
@@ -40,27 +41,28 @@
       v-model="sharedState.year"
       number
     >
-        <span class="select">
-          <select
-            class="month"
-            v-bind:class="{ 'is-danger': !validation.month }"
-            v-model="sharedState.month"
-            number
-          >
-            <option value="0">月</option>
-            <option v-for="i in 12" value="{{ i + 1 }}">{{ i + 1 }}</option>
-          </select>
-        </span>
-        <span class="select">
-          <select
-            class="day"
-            v-bind:class="{ 'is-danger': !validation.day }"
-            v-model="sharedState.day"
-            number
-          >
-            <option value="0">日</option>
-            <option v-for="i in 31" value="{{ i + 1 }}">{{ i + 1 }}</option>
-          </select>
-        </span>
+    <span class="select">
+      <select
+        class="month"
+        v-bind:class="{ 'is-danger': !validation.month }"
+        v-model="sharedState.month"
+        number
+      >
+        <option value="0">月</option>
+        <option v-for="i in 12" value="{{ i + 1 }}">{{ i + 1 }}</option>
+      </select>
+    </span>
+    <span class="select">
+      <select
+        class="day"
+        v-bind:class="{ 'is-danger': !validation.day }"
+        v-model="sharedState.day"
+        number
+      >
+        <option value="0">日</option>
+        <option v-for="i in 31" value="{{ i + 1 }}">{{ i + 1 }}</option>
+      </select>
+    </span>
   </div>
 </div>
+<hr>

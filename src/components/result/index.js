@@ -10,19 +10,28 @@ export default {
   },
   template: template,
   computed: {
-    leftPercentage: function () {
+    passedPercentage: function () {
       const { lifeSpan, year, month, day, initAge } = this.sharedState;
 
-      if (!(lifeSpan && year && month && day)) {
-        return 0;
+      if (!(lifeSpan && year && month && day && initAge)) {
+        return null;
       }
 
       const passedPercentage = (Math.log(this.calcAge() / initAge) / Math.log(lifeSpan / initAge)) * 100;
 
       if (100 < passedPercentage) {
+        return 100;
+      }
+      return this.padZero(Math.round(passedPercentage * 1000000000) / 1000000000);
+    },
+    centerAge: function () {
+      const { lifeSpan, initAge } = this.sharedState;
+
+      if (!(lifeSpan && initAge)) {
         return 0;
       }
-      return this.padZero(Math.round((100 - passedPercentage) * 1000000000) / 1000000000);
+
+      return Math.round(Math.sqrt(initAge * lifeSpan) * 10) / 10;
     }
   },
   methods : {
