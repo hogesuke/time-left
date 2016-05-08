@@ -4,5 +4,5 @@ export default {
   year    : null,
   month   : 0,
   day     : 0,
-  initAge : 3
+  initAge : 3.5
 };
