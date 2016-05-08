@@ -1,4 +1,12 @@
 var path = require('path');
+var webpack = require('webpack');
+
+var minimize = process.argv.indexOf('--minimize') !== -1;
+var plugins = [];
+
+if (minimize) {
+  plugins.push(new webpack.optimize.UglifyJsPlugin({ sourceMap: false }))
+}
 
 module.exports = {
   entry : './src/app.js',
@@ -10,6 +18,7 @@ module.exports = {
     root: [ path.join(__dirname, 'node_modules') ],
     extensions: ['', '.webpack.js', '.web.js', '.js']
   },
+  plugins: plugins,
   module: {
     loaders: [
       { test: /\.html$/, loader: 'html', exculde: /node_modules/ },
