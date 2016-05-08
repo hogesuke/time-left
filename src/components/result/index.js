@@ -19,6 +19,10 @@ export default {
 
       this.save();
 
+      if (lifeSpan <= initAge) {
+        return 100;
+      }
+
       const passedPercentage = (Math.log(this.calcAge() / initAge) / Math.log(lifeSpan / initAge)) * 100;
 
       if (100 < passedPercentage) {
